@@ -21,8 +21,12 @@ step = 18                # Step -> GPIO Pin
 # Declare an instance of class pass GPIO pins numbers and the motor type
 mymotortest = RpiMotorLib.A4988Nema(direction, step, GPIO_pins, "DRV8825")
 
-# call the function, pass the arguments
-#clockwise / Full mode / 100 steps / step delay of .01 second / verbose output off / 50mS init delay
+# Rotation        clockwise
+# Microstepping   1/16 
+# Number of steps 100
+# Step delay      .01 second
+# Verbose output  off
+# Initial delay   50mS
 mymotortest.motor_go(False, "1/16" , 100, .01, False, .05)
 
 # good practise to cleanup GPIO at some point before exit
